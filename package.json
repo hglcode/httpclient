@@ -1,0 +1,44 @@
+{
+    "name": "httpclient",
+    "version": "0.1.0",
+    "description": "Production-grade fetch-style HTTP client on undici: cookie sessions, retry with backoff, circuit breaker, rate limiting, telemetry.",
+    "repository": {
+        "url": "https://github.com/hglcode/httpclient.git"
+    },
+    "type": "module",
+    "license": "MIT",
+    "engines": {
+        "node": ">=22.19.0"
+    },
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.js"
+        }
+    },
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "build": "tsc -p tsconfig.build.json",
+        "typecheck": "tsc -p tsconfig.json --noEmit",
+        "lint": "oxlint --type-aware src tests scripts",
+        "test": "vitest run",
+        "test:watch": "vitest",
+        "test:bun": "bun test"
+    },
+    "dependencies": {
+        "tough-cookie": "^6.0.2",
+        "undici": "^8.12.3"
+    },
+    "devDependencies": {
+        "@types/node": "^26.6.5",
+        "oxlint": "^1.90.0",
+        "oxlint-tsgolint": "^7.0.2005",
+        "tsx": "^4.23.15",
+        "typescript": "^7.0.2",
+        "vitest": "^5.0.5"
+    }
+}
