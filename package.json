@@ -1,5 +1,5 @@
 {
-    "name": "@gl/httpclient",
+    "name": "@glcoding/httpclient",
     "version": "0.1.0",
     "description": "Production-grade fetch-style HTTP client on undici: cookie sessions, retry with backoff, circuit breaker, rate limiting, telemetry.",
     "repository": {

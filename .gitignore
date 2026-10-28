@@ -1,3 +1,4 @@
 /dist
 /node_modules
 /pnpm-workspace.yaml
+/*.tgz
