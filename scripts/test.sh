@@ -63,23 +63,21 @@ test_bun() {
     cd "$ROOT"
     rm -rf node_modules
     bun up --latest
-    bun add -d oxlint oxlint-tsgolint
-    bun oxlint --type-aware scripts src tests 2>/dev/null
-    bun tsc --noEmit 2>/dev/null
-    bun test 2>/dev/null
-    bun run build 2>/dev/null
+    bun oxlint --type-aware scripts src tests >/dev/null
+    bun tsc --noEmit >/dev/null
+    bun test >/dev/null
+    bun run build >/dev/null
 }
 
 test_node() {
     cd "$ROOT"
     rm -rf node_modules
     pnpm up --latest
-    pnpm add -D oxlint oxlint-tsgolint
-    pnpm approve-builds -y 2>/dev/null
-    pnpm oxlint --type-aware scripts src tests 2>/dev/null
-    pnpm tsc --noEmit 2>/dev/null
-    pnpm test 2>/dev/null
-    pnpm run build 2>/dev/null
+    pnpm approve-builds -y >/dev/null
+    pnpm oxlint --type-aware scripts src tests >/dev/null
+    pnpm tsc --noEmit >/dev/null
+    pnpm test >/dev/null
+    pnpm run build >/dev/null
 }
 
 (test_bun && info "bun test OK") || fatal "bun test NG"
